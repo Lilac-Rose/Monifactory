@@ -297,6 +297,14 @@ ServerEvents.recipes(event => {
         .duration(300)
         .EUt(30)
 
+    // Electrolyze Sulfuric Acid into Sulfur, Hydrogen and Oxygen (H2SO4 -> H2 + S + 2O2)
+    event.recipes.gtceu.electrolyzer("sulfuric_acid_electrolysis")
+        .inputFluids("gtceu:sulfuric_acid 1000")
+        .itemOutputs("gtceu:sulfur_dust")
+        .outputFluids("gtceu:hydrogen 1000", "gtceu:oxygen 2000")
+        .duration(240)
+        .EUt(GTValues.VA[GTValues.LV])
+
     // UHV+ Parallel Control Hatch
     event.shaped("monilabs:uhv_parallel_hatch", [
         "SCE",
